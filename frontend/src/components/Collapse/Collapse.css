@@ -7,14 +7,28 @@
     color: white;
     margin: 0;
 }
+.collapse-title img {
+    rotate: 0deg;
+    transition: all ease 0.3s;
+}
+.collapse-title img.opened {
+    rotate: 180deg;
+    transition: all ease 0.3s;
+}
 
 .collapse-content {
-    /* background-color: rgba(246, 246, 246, 0.45); */
-    background-color: gray;
+    background-color: rgba(246, 246, 246, 0.45);
     padding: 20px;
+    font-size: 18px;
+    border-radius: 5px;
 }
 
 .collapse-content p {
-    margin: 0;
+    margin: 0; 
 }
 
+.collapse {
+    padding-bottom: 30px;
+    width: 80%;
+    padding-left: 130px;
+}
