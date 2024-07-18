@@ -1,5 +1,6 @@
 import './Header.css';
 import logo from '../../assets/logo.png';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
     return (
@@ -7,8 +8,12 @@ const Header = () => {
             <div className= 'kasa-banner'>
                 <img src={logo} alt='logo Kasa' className='logo-kasa' />
                 <ul>
-                    <li><a href="#">Accueil</a></li>
-                    <li><a href="#">A Propos</a></li>
+                    <li>
+                        <Link to="/">Accueil</Link>
+                    </li>
+                    <li>
+                    <Link to="/About">A propos</Link>
+                    </li>
                 </ul>
             </div>
         </header>

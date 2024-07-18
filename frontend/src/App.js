@@ -12,16 +12,18 @@ import House from "./pages/House/House";
 function App() {
   return (
     <>
-      <Header />
+
       <Router>
+        <Header />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="*" element={<Error />} />
-          <Route path="/house" element={<House />} />
+          <Route path="/house/:id" element={<House />} />
         </Routes>
+        <Footer />
       </Router>
-      <Footer />
+
     </>
   );
 }
