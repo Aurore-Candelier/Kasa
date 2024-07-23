@@ -1,3 +1,19 @@
+.house-container {
+    padding: 20px;
+}
+
+.house-title {
+    font-size: 36px;
+    font-family: 'Montserrat';
+    font-weight: 500;
+    color: #ff6f6f;
+}
+
+.house-location {
+    font-size: 18px;
+    margin-bottom: 20pxs;
+}
+
 .collapse-house {
     display: flex;
     flex-direction: row;
@@ -12,3 +28,20 @@
     padding-left: 0;
 }
 
+.house-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.title-location {
+    flex-grow: 1;
+}
+
+.tags-host-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}

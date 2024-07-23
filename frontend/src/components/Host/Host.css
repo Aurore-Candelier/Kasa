@@ -1,0 +1,20 @@
+.host-container {
+    display: flex;
+    align-items: center;
+}
+
+.host-picture {
+    border-radius: 50%;
+    width: 64px;
+    height: 64px;
+    object-fit: cover;
+}
+
+.host-name {
+    font-size: 18px;
+    font-weight: 500;
+    color: rgba(255, 96, 96, 1);
+    margin-right: 10px;
+}
+
+

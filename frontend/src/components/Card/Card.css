@@ -3,29 +3,28 @@
     border-radius: 45px;
     margin-top: 43px;
     padding: 50px 56px;
-}
-
-.card-container ul {
-    display: flex;
-    flex-wrap: wrap;
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    gap: 30px; 
-    
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
 }
 
 .card {
     position: relative;
-    width: calc(33.33% - 20px); /* 3 cards par ligne avec espace */
-    margin: 0; 
+    width: 100%;
+    position: relative;
+    margin-bottom: 20px; /* Ajoute un espace en bas pour les nouvelles lignes */
+    border-radius: 10px; /* Ajoute un rayon de bordure aux cartes */
+    overflow: hidden; /* Assure que le contenu ne dépasse pas les bords des cartes */
+    display: flex;
+    flex-direction: column; /* Assure que le contenu est empilé verticalement */
+    align-items: center; /* Centre le contenu horizontalement */ 
     box-sizing: border-box; /* Inclut le padding et la bordure dans la largeur totale */
 }
 
 .card-image-wrapper {
     position: relative;
     width: 100%;
-    aspect-ratio: 1 / 1; /*maintient la forme carré*/
+    padding-top: 100%; /*maintient la forme carré*/
     overflow: hidden;
 }
 
