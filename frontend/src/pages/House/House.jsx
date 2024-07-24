@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 import React, { useState, useEffect } from 'react';
 import Tag from "../../components/Tag/Tag";
 import Host from "../../components/Host/Host";
+import Stars from "../../components/Stars/Stars";
 
 function fetchHouse(param, setData, setLoading) {
     fetch('http://localhost:8080/api/properties/' + param.id)
@@ -26,7 +27,12 @@ function fetchHouse(param, setData, setLoading) {
 }
 const House = () => {
     const param = useParams()
-    const [data, setData] = useState({ description: "", equipments: [], host: { name: "", picture: "" } });  // État pour stocker les données récupérées de l'API
+    const [data, setData] = useState({
+        description: "",
+        equipments: [],
+        host: { name: "", picture: "" },
+        rating: 0,
+    });  // État pour stocker les données récupérées de l'API
     const [loading, setLoading] = useState(true);  // État pour indiquer si les données sont en cours de chargement
 
     // Charge les données depuis l'API lors du montage du composant
@@ -45,13 +51,16 @@ const House = () => {
     return (
         <>
             <div className="house-container">
-                {/* <Slideshow /> */}
+                <Slideshow />
                 <div className="house-header">
                     <div className="title-location">
                         <h1 className="house-title">{data.title}</h1>
                         <p className="house-location">{data.location}</p>
                     </div>
-                    <Host name={data.host.name} picture={data.host.picture} />
+                    <div className="host-stars-container">
+                        <Host name={data.host.name} picture={data.host.picture} />
+                        <Stars rating={data.rating} />
+                    </div>
                 </div>
                 {Array.isArray(data.tags) && data.tags.length > 0 && (
                     <Tag tags={data.tags} />

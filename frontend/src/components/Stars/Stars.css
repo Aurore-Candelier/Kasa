@@ -1,0 +1,12 @@
+.star-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 2px;
+}
+
+
+
+.stars {
+    display: flex;
+    justify-content: flex-end;
+}

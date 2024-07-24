@@ -45,3 +45,13 @@
     align-items: center;
     margin-bottom: 20px;
 }
+
+.host-stars-container {
+    display: flex;
+    flex-direction: column;
+    gap: 21px;
+}
+
+.slideshow {
+    margin-bottom: 20px;
+}

@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import './Slideshow.css';
+import ArrowRight from '../../assets/arrow-right.svg';
+import ArrowLeft from '../../assets/arrow-left.svg';
+
 
 const Slideshow = () => {
     const [data, setData] = useState([]);  // État pour stocker les données récupérées de l'API
     const [loading, setLoading] = useState(true);  // État pour indiquer si les données sont en cours de chargement
     const [error, setError] = useState(null);  // État pour stocker les erreurs s'il y en a
-    
+    const [currentIndex, setCurrentIndex] = useState(0); // État pour suivre la diapositive affichée
+
     // Charge les données depuis l'API lors du montage du composant
     useEffect(() => {
         fetch('http://localhost:8080/api/properties')
@@ -14,7 +18,7 @@ const Slideshow = () => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }
-                return response.json();  
+                return response.json();
             })
             // Traite les données JSON récupérées
             .then((data) => {
@@ -40,17 +44,36 @@ const Slideshow = () => {
         return <div>Erreur: {error.message}</div>;
     }
 
+    const handlePrevClick = () => {
+        setCurrentIndex((prevIndex) =>
+            prevIndex === 0 ? data.length - 1 : prevIndex - 1
+        );
+    };
+
+    const handleNextClick = () => {
+        setCurrentIndex((prevIndex) =>
+            prevIndex === data.length - 1 ? 0 : prevIndex + 1
+        );
+    };
+
     return (
         <div className="slides-container">
-            <ul>
-                {data.map((item) => (
-                    <li key={item.id} className="slide">
+            <button className="nav-button prev" onClick={handlePrevClick}>
+                <img src={ArrowLeft} alt="Previous" />
+            </button>
+            <ul className="slides">
+                {data.map((item, index) => (
+                    <li key={item.id} className={`slide ${index === currentIndex ? 'active' : ''}`}>
+
                         <div className="slide-image">
                             <img src={item.cover} alt={item.title} className="slide-cover" />
                         </div>
                     </li>
                 ))}
             </ul>
+            <button className="nav-button next" onClick={handleNextClick}>
+                <img src={ArrowRight} alt="Next" />
+            </button>
         </div>
     );
 };
