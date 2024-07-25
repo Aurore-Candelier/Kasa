@@ -48,10 +48,20 @@ const House = () => {
 
     console.log('etat des données:', data);
 
+    const equipments = Array.isArray(data.equipments) && data.equipments.length > 0 ? (
+        <ul>
+            {data.equipments.map((equipment, index) => (
+                <li key={index}>{equipment}</li>
+            ))}
+        </ul>
+    ) : (
+        <p>Aucun équipement disponible.</p>
+    )
+
     return (
         <>
             <div className="house-container">
-                <Slideshow />
+                <Slideshow pictures={data.pictures} />
                 <div className="house-header">
                     <div className="title-location">
                         <h1 className="house-title">{data.title}</h1>
@@ -68,17 +78,7 @@ const House = () => {
 
                 <div className="collapse-house">
                     <Collapse title="Description  " content={data.description} />
-                    <Collapse title="Équipement ">
-                        {Array.isArray(data.equipments) && data.equipments.length > 0 ? (
-                            <ul>
-                                {data.equipments.map((equipment, index) => (
-                                    <li key={index}>{equipment}</li>
-                                ))}
-                            </ul>
-                        ) : (
-                            <p>Aucun équipement disponible.</p>
-                        )}
-                    </Collapse>
+                    <Collapse title="Équipement " content={equipments} /> 
                 </div>
             </div>
         </>

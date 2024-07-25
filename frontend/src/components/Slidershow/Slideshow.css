@@ -15,6 +15,7 @@
 .slide {
     min-width: 100%;
     box-sizing: border-box;
+    display: none;
 }
 
 .slide-image {
@@ -53,4 +54,16 @@
 .active {
     opacity: 1;
     transition: opacity 1s ease-in-out;
+    display: block;
 }
+
+.slide-counter {
+    position: absolute;
+    bottom: 45px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    padding: 5px 10px;
+    font-size: 18px;
+}
+

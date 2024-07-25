@@ -7,13 +7,11 @@ const Stars = ({ rating }) => {
     const filledStars = rating;
     const emptyStars = totalStars - filledStars;
 
+    console.log(filledStars, emptyStars)
     return (
         <div className='stars'>
-            {[...Array(filledStars)].map((_, index) => (
-                <img key={index} src={starFilled} alt="Star filled" className='star-icon' />
-            ))}
-            {[...Array(emptyStars)].map((_, index) => (
-                <img key={index} src={starEmpty} alt="Star empty" className='star-icon' />
+            {[...Array(totalStars)].map((_, index) => (
+                <img key={`${index}`} src={index < rating ? starFilled : starEmpty} alt="Star filled" className='star-icon' />
             ))}
         </div>
     )
