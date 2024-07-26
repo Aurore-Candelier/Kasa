@@ -7,11 +7,18 @@
 .tag {
     display: inline-block;
     background-color: rgba(255, 96, 96, 1);
-    height: 25px;
     color: white;
     font-weight: 700;
     text-align: center;
-    border-radius: 10px;
-    padding: 5px 15px;
+    border-radius: 15px;
+    padding: 5px 25px;
     margin-bottom: 24px;
+}
+
+/* Styles pour les écrans avec une largeur maximale de 600px (smartphones) */
+@media (max-width: 600px) {
+    .tag {
+        border-radius: 10px;
+        font-size: 10px;
+    }
 }

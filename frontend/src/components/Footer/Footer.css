@@ -20,3 +20,16 @@
 .logo-text img {
     width: fit-content;
 }
+
+/* Styles pour les écrans avec une largeur maximale de 600px (smartphones) */
+@media (max-width: 600px) {
+
+    .logo-text {
+        gap: 0px;
+    }
+
+    .logo-text p {
+        font-size: 12px;
+        width: 22%;
+    }
+}

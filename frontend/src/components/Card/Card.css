@@ -42,8 +42,34 @@
     position: absolute;
     bottom: 0;
     left: 0;
-    color: white;
+    color: black;
     margin: 0;
     padding: 20px;
     font-size: 18px;
+}
+
+/* Styles pour les écrans avec une largeur maximale de 600px (smartphones) */
+@media (max-width: 600px) {
+    .card-container {
+        display: flex;
+        flex-direction: column;
+        padding: 0px;
+    }
+
+    .card-title {
+        position: absolute;
+        bottom: 5%; /* Ajuste cette valeur pour changer la position verticale du texte */
+        color: white;
+        padding: 10px 20px; /* Padding autour du texte */
+        margin: 0;
+        font-size: 18px;
+        font-weight: 700;
+        z-index: 1;
+    }
+
+    .card-image-wrapper {
+        height: 100%;
+        min-height: 300px;
+        padding-top: 0;
+    }
 }

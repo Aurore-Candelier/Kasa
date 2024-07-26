@@ -1,5 +1,6 @@
 .house-container {
     padding: 20px;
+    padding-bottom: 0px;
 }
 
 .house-title {
@@ -7,11 +8,12 @@
     font-family: 'Montserrat';
     font-weight: 500;
     color: #ff6f6f;
+    margin: 10px;
 }
 
 .house-location {
     font-size: 18px;
-    margin-bottom: 20pxs;
+    margin-top: auto;
 }
 
 .collapse-house {
@@ -22,6 +24,7 @@
 
 .collapse-house .collapse {
     padding-left: 0;
+    padding-bottom: 0;
 }
 .no-bullets {
     list-style-type: none;
@@ -32,7 +35,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px;
 }
 
 .title-location {
@@ -55,3 +57,37 @@
 .slideshow {
     margin-bottom: 20px;
 }
+
+.collapse-house .collapse .collapse-content ul {
+    list-style-type: none;
+    padding: 0px;
+    margin: 0;
+}
+
+/* Styles pour les écrans avec une largeur maximale de 600px (smartphones) */
+@media (max-width: 600px) {
+    .house-container {
+        padding: 0px;
+    }
+
+    .house-title {
+        font-size: 24px;
+        margin: 10px 0px;
+    }
+
+    .house-location {
+        font-size: 14px;
+        font-weight: 500;
+    }
+
+    .collapse-house {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .collapse-house .collapse {
+        padding-left: 0;
+        padding-bottom: 0;
+        width: 100%;
+    }
+    }

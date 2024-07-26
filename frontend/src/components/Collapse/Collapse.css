@@ -31,3 +31,10 @@
     width: 80%;
     padding-left: 130px;
 }
+
+/* Styles pour les écrans avec une largeur maximale de 600px (smartphones) */
+@media (max-width: 600px) {
+    .collapse-title {
+        font-size: 13px;
+    }
+}

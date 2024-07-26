@@ -67,3 +67,9 @@
     font-size: 18px;
 }
 
+/* Styles pour les écrans avec une largeur maximale de 600px (smartphones) */
+@media (max-width: 600px) {
+    .slide-cover {
+        height: 335px;
+    }
+}

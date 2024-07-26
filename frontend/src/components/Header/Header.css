@@ -13,10 +13,6 @@
     gap: 30px;
 }
 
-/* .kasa-banner li {
-    display: flex;
-} */
-
 .kasa-banner a {
     text-decoration: none;
     color: black;
@@ -25,4 +21,25 @@
 
 .kasa-banner a:hover {
     text-decoration: underline;
+}
+
+/* Styles pour les écrans avec une largeur maximale de 600px (smartphones) */
+@media (max-width: 600px) {
+
+.kasa-banner {
+        width: 100%;
+        height: 50px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: 40px;
+    }
+
+.kasa-banner a {
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+}
+
+
 }

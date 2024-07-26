@@ -16,7 +16,7 @@ export const Collapse = ({title, content}) => {
                 <img src={arrow} alt="arrow" onClick={handleClick} className={open ? 'opened': ''}/>
             </div>
             {open && <div className="collapse-content">
-                <p>{content || "Default Content"}</p>
+                {content || "Default Content"}
             </div>}
         </div>
     )
