@@ -1,6 +1,18 @@
 .house-container {
-    padding: 20px;
     padding-bottom: 0px;
+}
+
+.house-container .responsive-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.house-container .responsive-container .title-location-tags-container {
+    display: flex;
+    flex-direction: column;
+    flex: 70;
+    justify-content: space-between;
 }
 
 .house-title {
@@ -8,7 +20,7 @@
     font-family: 'Montserrat';
     font-weight: 500;
     color: #ff6f6f;
-    margin: 10px;
+    margin: 18px 0 0 0;
 }
 
 .house-location {
@@ -38,6 +50,10 @@
 }
 
 .title-location {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 10px;
     flex-grow: 1;
 }
 
@@ -51,7 +67,11 @@
 .host-stars-container {
     display: flex;
     flex-direction: column;
+    flex: 30;
+    justify-content: flex-start;
+    align-items: flex-end;
     gap: 21px;
+    order: 0; /* Ordre par défaut*/
 }
 
 .slideshow {
@@ -70,6 +90,10 @@
         padding: 0px;
     }
 
+    .house-container .responsive-container {
+        flex-direction: column;
+    }
+
     .house-title {
         font-size: 24px;
         margin: 10px 0px;
@@ -84,10 +108,31 @@
         display: flex;
         flex-direction: column;
         gap: 20px;
+        order: 3;
     }
     .collapse-house .collapse {
         padding-left: 0;
         padding-bottom: 0;
         width: 100%;
     }
+
+    .tags-host-container {
+        flex-direction: column;
     }
+
+    .host-stars-container {
+        order: 2; /* Déplacer le conteneur entre les tags et les collapses */
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .host-stars-container .stars {
+        justify-content: flex-start;
+    }
+
+    .title-location {
+        gap: 0;
+    }
+
+}

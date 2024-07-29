@@ -62,23 +62,30 @@ const House = () => {
         <>
             <div className="house-container">
                 <Slideshow pictures={data.pictures} />
-                <div className="house-header">
-                    <div className="title-location">
-                        <h1 className="house-title">{data.title}</h1>
-                        <p className="house-location">{data.location}</p>
+
+                <div className="responsive-container">
+                    <div className="title-location-tags-container">
+                        <div className="house-header">
+                            <div className="title-location">
+                                <h1 className="house-title">{data.title}</h1>
+                                <p className="house-location">{data.location}</p>
+                            </div>
+                        </div>                    
+                        <div className="tags-container">
+                            {Array.isArray(data.tags) && data.tags.length > 0 && (
+                                <Tag tags={data.tags} />
+                            )}
+                        </div>
                     </div>
                     <div className="host-stars-container">
                         <Host name={data.host.name} picture={data.host.picture} />
                         <Stars rating={data.rating} />
                     </div>
                 </div>
-                {Array.isArray(data.tags) && data.tags.length > 0 && (
-                    <Tag tags={data.tags} />
-                )}
 
                 <div className="collapse-house">
                     <Collapse title="Description  " content={data.description} />
-                    <Collapse title="Équipement " content={equipments} /> 
+                    <Collapse title="Équipement " content={equipments} />
                 </div>
             </div>
         </>

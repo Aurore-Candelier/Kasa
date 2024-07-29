@@ -1,6 +1,8 @@
 .host-container {
     display: flex;
     align-items: center;
+    justify-content: flex-end;
+    width: 100%;
 }
 
 .host-picture {
@@ -15,6 +17,23 @@
     font-weight: 500;
     color: rgba(255, 96, 96, 1);
     margin-right: 10px;
+    width: 100%;
+    max-width: 80px;
+    text-align: end;
+    word-break: keep-all;
+    text-wrap: wrap;
+}
+
+/* Styles pour les écrans avec une largeur maximale de 600px (smartphones) */
+@media (max-width: 600px) {
+    .host-name {
+        font-size: 14px;
+    }
+
+    .host-picture {
+        width: 42px;
+        height: 42px;
+    }
 }
 
 

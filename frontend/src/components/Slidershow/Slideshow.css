@@ -72,4 +72,17 @@
     .slide-cover {
         height: 335px;
     }
+
+    .nav-button{
+        padding: 0;
+    }
+
+    .nav-button img {
+        width: 24px;
+        height: 24px;
+    }
+
+    .slide-counter{
+        display: none;
+    }
 }

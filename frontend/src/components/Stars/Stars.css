@@ -4,9 +4,18 @@
     margin-right: 2px;
 }
 
-
-
 .stars {
     display: flex;
+    flex-direction: row;
     justify-content: flex-end;
+    width: 100%;
+    gap: 10px;
+}
+
+/* Styles pour les écrans avec une largeur maximale de 600px (smartphones) */
+@media (max-width: 600px) {
+    .star-icon {
+        width: 18px;
+        height: 18px;
+    }
 }
