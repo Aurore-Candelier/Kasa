@@ -21,8 +21,32 @@
     margin-top: 0;
 }
 
-.error-container a {
+.error-link {
     font-size: 18px;
     font-weight: 500;
     color: black;
+}
+
+
+/* * Styles pour les écrans avec une largeur maximale de 600px (smartphones) */ 
+@media (max-width: 600px) {
+
+    .error-container {
+        gap: 113px;
+        padding-top: 113px;
+        padding-bottom: 113px;
+    }
+    .error-code {
+        font-size: 96px;
+    }
+
+    .error-container p {
+        font-size: 18px;
+        width: 70%;
+        text-align: center;
+    }
+
+    .error-link {
+        font-size: 14px;
+    }
 }

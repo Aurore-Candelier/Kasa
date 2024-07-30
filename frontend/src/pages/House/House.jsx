@@ -1,17 +1,22 @@
 import "./House.css";
 import { Collapse } from '../../components/Collapse/Collapse';
 import Slideshow from "../../components/Slidershow/Slideshow";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import React, { useState, useEffect } from 'react';
 import Tag from "../../components/Tag/Tag";
 import Host from "../../components/Host/Host";
 import Stars from "../../components/Stars/Stars";
 
-function fetchHouse(param, setData, setLoading) {
+function fetchHouse(param, setData, setLoading, navigate) {
     fetch('http://localhost:8080/api/properties/' + param.id)
         // Convertit la réponse en JSON
-        .then((response) => response.json())
-        // Traite les données JSON récupérées
+        .then((response) => {
+            if(!response.ok) {
+                throw new Error('ID incorrect');
+            }
+            return response.json();
+        })
+        
         .then((data) => {
             console.log(data); // Affiche toutes les données
             console.log(data.equipments);
@@ -23,10 +28,13 @@ function fetchHouse(param, setData, setLoading) {
         .catch((error) => {
             console.error('Erreur:', error);  // Affiche l'erreur dans la console
             setLoading(false);  // Indique que le chargement est terminé (même en cas d'erreur)
+            navigate('/error');
         });
 }
+
 const House = () => {
-    const param = useParams()
+    const param = useParams();
+    const navigate = useNavigate();
     const [data, setData] = useState({
         description: "",
         equipments: [],
@@ -38,9 +46,9 @@ const House = () => {
     // Charge les données depuis l'API lors du montage du composant
     useEffect(() => {
         if (param.id) {
-            fetchHouse(param, setData, setLoading)
+            fetchHouse(param, setData, setLoading, navigate)
         }
-    }, [param.id]);
+    }, [param.id, navigate]);
 
     if (loading) {
         return <div>Loading...</div>;
