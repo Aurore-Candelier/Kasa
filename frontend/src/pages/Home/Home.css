@@ -1,6 +1,6 @@
 .image-container {
     position: relative;
-    margin-top: 50px;
+    margin: 50px 100px 0px ;
 }
 
 .background-image {
@@ -32,6 +32,11 @@
 
 /* Styles pour les écrans avec une largeur maximale de 600px (smartphones) */
 @media (max-width: 600px) {
+
+.image-container {
+    margin: 20px;
+}
+
 .background-image {
     width: 100%;
     height: 160px;

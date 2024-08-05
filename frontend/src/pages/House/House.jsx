@@ -19,7 +19,6 @@ function fetchHouse(param, setData, setLoading, navigate) {
         
         .then((data) => {
             console.log(data); // Affiche toutes les données
-            console.log(data.equipments);
 
             setData(data);  // Met à jour l'état 'data' avec les données récupérées
             setLoading(false);  // Indique que le chargement est terminé
@@ -28,22 +27,17 @@ function fetchHouse(param, setData, setLoading, navigate) {
         .catch((error) => {
             console.error('Erreur:', error);  // Affiche l'erreur dans la console
             setLoading(false);  // Indique que le chargement est terminé (même en cas d'erreur)
-            navigate('/error');
+            navigate('/error'); // Redirige vers une page d'erreur en cas d'échec de la requête
         });
 }
 
 const House = () => {
-    const param = useParams();
-    const navigate = useNavigate();
-    const [data, setData] = useState({
-        description: "",
-        equipments: [],
-        host: { name: "", picture: "" },
-        rating: 0,
-    });  // État pour stocker les données récupérées de l'API
+    const param = useParams(); // Récupère les paramètres d'URL (notamment param.id)
+    const navigate = useNavigate();  // Fonction de navigation pour naviguer vers une autre route
+    const [data, setData] = useState();  // État pour stocker les données récupérées de l'API
     const [loading, setLoading] = useState(true);  // État pour indiquer si les données sont en cours de chargement
 
-    // Charge les données depuis l'API lors du montage du composant
+    // Effet secondaire pour charger les données de la maison lorsque param.id change
     useEffect(() => {
         if (param.id) {
             fetchHouse(param, setData, setLoading, navigate)

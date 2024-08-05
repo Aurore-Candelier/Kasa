@@ -4,9 +4,11 @@ import { useState } from "react"
 
 
 export const Collapse = ({title, content}) => {
-    const [open, setOpen] = useState(false);
+    const [open, setOpen] = useState(false); // Etat local pour gérer l'ouverture/fermeture du contenu 
+
+    // Fonction de gestion du clic sur la flèche pour basculer l'état 'open'
     const handleClick = () => {
-        setOpen(!open)
+        setOpen(!open) // Inverse l'état 'open' à chaque clic
     }
 
     return (

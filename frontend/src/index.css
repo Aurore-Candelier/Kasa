@@ -6,7 +6,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  margin: 0 100px;
   height: 100vh;
 
 }
@@ -15,11 +14,4 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
-
-/* Styles pour les écrans avec une largeur maximale de 600px (smartphones) */
-@media (max-width: 600px) {
-  body{
-    margin: 20px;
-  }
 }
