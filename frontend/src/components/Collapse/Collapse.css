@@ -15,11 +15,44 @@
     rotate: 180deg;
 }
 
-.collapse-content {
-    background-color: rgba(246, 246, 246, 0.45);
+.collapse-content.opened {
     padding: 20px;
     font-size: 18px;
     border-radius: 5px;
+    animation: slide-in 0.2s ease-in-out 0s 1 normal none;
+    display: block;
+    height: 100%;
+    opacity: 1;
+}
+
+.collapse-content {
+    opacity: 0;
+    height: 0;
+    animation: slide-out 0.1s ease-in-out 0s 1 normal none;
+}
+
+@keyframes slide-in {
+	0% {
+		opacity: 0;
+		transform: translateY(-50px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes slide-out {
+    0% {
+        opacity: 1;
+		transform: translateY(0);
+	}
+
+	100% {
+        opacity: 0;
+		transform: translateY(-10px);
+	}
 }
 
 .collapse-content p {
@@ -34,6 +67,12 @@
 
 /* Styles pour les écrans avec une largeur maximale de 600px (smartphones) */
 @media (max-width: 600px) {
+    .collapse {
+        padding: 0;
+        width: 100%;
+        padding-bottom: 20px;
+    }
+
     .collapse-title {
         font-size: 13px;
     }

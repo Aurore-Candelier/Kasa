@@ -17,9 +17,9 @@ export const Collapse = ({title, content}) => {
                 <h2 className="collapse-title__text">{title || "Default Title"}</h2>
                 <img src={arrow} alt="arrow" onClick={handleClick} className={open ? 'opened': ''}/>
             </div>
-            {open && <div className="collapse-content">
+            <div className={`collapse-content ${open ? "opened" : ""}`}>
                 {content || "Default Content"}
-            </div>}
+            </div>
         </div>
     )
 }

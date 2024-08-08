@@ -1,0 +1,38 @@
+.image-container {
+    margin: 0 100px;
+}
+
+.background-image {
+    width: 100%;
+    height: 223px;
+    border-radius: 25px;
+    filter: brightness(0.7);
+    object-fit: cover;
+    margin-top: 38px;
+    margin-bottom: 38px;
+}
+
+.centered-text {
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+    width: 70%;
+    top: 50%;
+    left: 52%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 48px;
+    font-weight: 700;
+    text-shadow:
+    -1px -1px 0 black,
+    1px -1px 0 black,
+    -1px 1px 0 black,
+    1px 1px 0 black;
+}
+
+/* Styles pour les écrans avec une largeur maximale de 600px (smartphones) */
+@media (max-width: 600px) {
+    .image-container{
+        margin: 0 20px;
+    }
+}

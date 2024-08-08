@@ -1,5 +1,6 @@
 .house-container {
     padding-bottom: 0px;
+    margin: 0 100px;
 }
 
 .house-container .responsive-container {
@@ -88,6 +89,7 @@
 @media (max-width: 600px) {
     .house-container {
         padding: 0px;
+        margin: 0 20px;
     }
 
     .house-container .responsive-container {
